@@ -36,6 +36,10 @@
 			}
 
 		</style>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_ltk7t5oRK_HAoJoo4JQh9R1vz4-1mnU&amp;libraries=places&amp;sensor=false"
+	   			type="text/javascript"></script>
+		<script src="/js/main.js"></script>
+
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -49,7 +53,7 @@
 					<form class="form-inline">
 						<div class="form-group">
 					    	<label for="prospect-address"></label>
-					    	<input type="text" class="form-control" id="prospect-address" placeholder="Address">
+					    	<input type="text" class="form-control" id="prospect-address" placeholder="Address" autocomplete="on" size="55">
 					  	</div>
 					  	<div class="form-group">
 					    	<label for="prospect-unit-number"></label>
@@ -62,3 +66,10 @@
 		</div>
 	</body>
 </html>
+
+<!-- TODO:  Center elements inside form
+*TODO:  Add text instructions on what do next
+TODO:  separate CSS file
+*TODO:  vertically responsive
+TODO:  Add footer with contact info
+TODO:  Invalid address detection - not allowed to proceed -->
