@@ -1,16 +1,71 @@
-## Laravel PHP Framework
+#Real Estate Valuations
+##Contents
+####1.  [Inspiration Behind The Idea](#inspiration-behind-the-idea)
+####2.  [Programming Languages Used](#programming-languages-used)
+####3.  [Programming Frameworks Used](#programming-frameworks-used)
+####4.  [APIs Used](#apis-used)
+####5.  [Programming Skills Implemented](#programming-skills-implemented)
+####6.  [Real Estate Valuation Features](#real-estate-valuation-features)
+####7.  [Repository Structure](#repository-structure)
+####8.  [Laravel Official Documentation](#laravel-official-documentation)
+####9.  [Questions or Problems](#questions-or-problems)
+# 
+## Inspiration behind the idea
+Coming Soon...
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Programming languages used
+* PHP
+* JavaScript
+* CSS
+* HTML
+* MySQL
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+## Programming frameworks used
+* jQuery
+* Laravel
+* Twitter Bootstrap
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+## APIs used:
+* Mailgun
+* Google Maps API
+* Google Places API
+* Facebook
+* AJAX and JSON
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Programming skills implemented
+* Relational Databases
+* Object Oriented Programming
+* Model-View-Controller Architecture
+
+## Real estate valuation features
+* Must-Have Features (Completed)
+	* Mobile Responsive
+	* GPS Address Auto Detection
+* Must-Have Features (In Progress)
+	* Broker Dashboard - Round Robin or Assign
+	* Lead Auto Responders
+	* Instant Lead Notification
+* Nice-To-Have Features
+	* Facebook Integration
+
+## Repository Structure
+NEEDS UPDATING
+
+__Description of key files__
+# 
+* App Folder
+	* Controllers: Create-Read-Update-Delete (CRUD) operations.
+	* Database
+		* Migrations:  Structure of the database tables.
+		* Seeds:  Seeder files to insert initial content into the database.
+	* Models:  Class definitions including the methods that define the relationships between the db tables.
+	* Views: The HTML that defines the part of the user experience.
+	* Routes File:  Routing of the views are defined in this file.
+* Public Folder
+	* CSS:  CSS Stylesheet for the application
+	* JS: JavaScript and jQuery functionality for the application
+	
+
 
 ## Official Documentation
 
