@@ -20,7 +20,7 @@ class ProspectsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('prospects.create');
+		// return View::make('prospects.create');
 	}
 
 
@@ -31,7 +31,9 @@ class ProspectsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		echo ("stored");
+		//store the resource into the database
+		// return View::make('prospects.edit');
 	}
 
 
