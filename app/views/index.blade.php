@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{ Form::open(array('action' => 'HomeController@additionalInformation', 'method' => 'POST', 'id' => 'create-form')) }}	
+{{ Form::open(array('action' => 'HomeController@store', 'method' => 'POST', 'id' => 'create-form')) }}	
 
 <div class="row">
 	<div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-6 col-sm-offset-3 jumbotron">
@@ -14,14 +14,14 @@
 		</div>
 		<form class="form-inline">
 			<div class="form-group">
-		    	<label for="prospect-address"></label>
-		    	<input type="text" class="form-control" id="prospect-address" placeholder="Address" autocomplete="on" size="55">
+		    	{{ Form::label('prospect-address', ' ') }}
+		        {{ Form::text('prospect-address', null, ['class' => 'form-control', 'placeholder' => 'Address', 'autocomplete' => 'on']) }}
 		  	</div>
 		  	<div class="form-group">
-		    	<label for="prospect-unit-number"></label>
-		    	<input type="text" class="form-control" id="prospect-unit-number" placeholder="Unit #">
+		  		{{ Form::label('prospect-unit-number', ' ') }}
+		        {{ Form::text('prospect-unit-number', null, ['class' => 'form-control', 'placeholder' => 'Unit Number']) }}
 		  	</div>
-		  	<button type="submit" class="btn btn-success">Submit</button>
+		  	{{ Form::submit('Submit', ['class' => 'btn btn-success']) }}
 		</form>
 	</div>
 </div>
@@ -31,9 +31,3 @@
 @stop
 
 
-
-{{--
-
-TODO:  turn into a blade file
-
---}}
