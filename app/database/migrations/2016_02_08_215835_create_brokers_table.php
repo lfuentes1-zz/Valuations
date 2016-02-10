@@ -19,7 +19,7 @@ class CreateBrokersTable extends Migration {
 	        $table->string('broker_last_name', 250);
 	        $table->string('broker_phone_number', 20);
 			$table->string('broker_email', 200)->unique();
-	        $table->string('broker_photo');
+	        $table->string('broker_photo')->nullable();
 	        $table->string('broker_password');
 			$table->timestamps();
 		});
