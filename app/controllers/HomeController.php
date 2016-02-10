@@ -8,30 +8,43 @@ class HomeController extends BaseController {
 		return View::make('index');
 	}
 
-	public function additionalInformation()
-	{
+	//store the prospect into the database
+	public function store()
+	{	
 
 		$prospect = new Prospect();
-		$prospect->prospect_adress = ;
-	    $prospect->prospect_apt_unit = ;
-        $prospect->prospect_city = ;
-        $prospect->prospect_state = ;
+		$fullAddress = Input::get('prospect-address');
+		$addressPieces = explode(", ", $fullAddress);
+		$prospect->prospect_adress = $addressPieces[0];
+		$prospect->prospect_city = $addressPieces[1];
+		$prospect->prospect_state = $addressPieces[2];
 
-		if ($prospect->save()) {  //true returns true or false
-			$prospect->agent_id  = Agent::findOrFail(1)->id;  //formula to determine agent
-			$prospect->broker_id = Broker::findOrFail(1)->id;  //formula to determine agent
+		if (Input::has('prospect-unit-number'))
+		{
+	    	$prospect->prospect_apt_unit = Input::get('prospect-unit-number');
+		}
+		$prospect->agent_id  = Agent::findOrFail(1)->id;  //formula to determine agent
+		$prospect->broker_id = Broker::findOrFail(1)->id;  
+
+		if ($prospect->save())
+		{  //true returns true or false
 			return Redirect::route('additional_information', $prospect->id);
-		} else {
+		}
+		else
+		{
 			Session::flash('errorMessage', 'Unable to locate property!');
 			return Redirect::back()->withInput();
 		}
-		// return View::make('additional_information');
+	}
+
+	public function edit($id)
+	{
+		return View::make('additional_information')->with(array('id' => $id, 'address' => $fullAddress));
 	}
 
 	public function thankYou()
 	{
 		//update the prospect into the database
-		echo ('updated');
 		return View::make('thank_you');
 	}
 
