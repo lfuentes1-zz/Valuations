@@ -1,0 +1,63 @@
+/*@import url(//fonts.googleapis.com/css?family=Lato:700);*/
+
+/*http://stackoverflow.com/questions/28144233/bootstrap-container-with-positionabsolute-loses-layout-inside*/
+.top-box {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: 0;			
+}
+
+/*.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+/*// Usage
+.ontop {
+		width: 940px;
+		.center-block();
+}*/
+
+.jumbotron {
+	border: #5CB85C solid 5px;
+	border-radius:10px;
+	background: rgb(51, 51, 51); /* This is for ie8 and below */
+	background: rgba(51, 51, 51, 0.5); 
+}
+
+.jumbotron-heading {
+	color: #FFFFFF;
+}
+
+.jumbotron-subheading {
+	color: #FBFCB9;
+}
+
+.jumbotron-special-txt {
+	color: #F92C07;
+}
+
+.footer {
+	border: #5CB85C solid 1px;
+	background: rgb(51, 51, 51); /* This is for ie8 and below */
+	background: rgba(51, 51, 51, 0.5); 
+	position: absolute;
+	top: 1000px; 
+	right: 0;
+	left: 0;	
+}
+
+
+
+
+
+
+/*
+
+TODO: class=footer should be at the bottom of the page - calculated and not with pixels
+TODO: line up footer content and disable links as necessary
+TODO: make footer responsive
+
+*/
