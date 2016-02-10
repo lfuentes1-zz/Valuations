@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'HomeController@homePage');
-Route::get('/additional_information', 'HomeController@additionalInformation');
+Route::post('/additional_information', 'HomeController@edit');
+
 Route::get('/thank_you', 'HomeController@thankYou');
 
 Route::resource('/prospects', 'ProspectsController'); 
