@@ -15,7 +15,7 @@ class CreateSpecialtiesTable extends Migration {
 		Schema::create('specialties', function($table)
 		{
 			$table->increments('id');
-	        $table->string('prospect_first_name', 250);
+	        $table->string('specialty_name', 250);
 			$table->timestamps();
 		});
 	}
