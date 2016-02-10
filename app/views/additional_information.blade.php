@@ -2,7 +2,11 @@
 
 @section('content')
 
-{{ Form::open(array('action' => 'HomeController@thankYou', 'method' => 'PUT')) }}
+{{ Form::model(array('action' => 'HomeController@thankYou', 'method' => 'PUT')) }}
+
+
+	  		{{ Form::model($group, array('action' => array('GroupsController@update', $group->id), 'method' => 'PUT')) }}
+
 
 <div class="row">
 	<div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-6 col-sm-offset-3 jumbotron">
