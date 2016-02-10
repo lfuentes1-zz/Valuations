@@ -20,7 +20,7 @@ class ProspectsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('prospects.create');
 	}
 
 
