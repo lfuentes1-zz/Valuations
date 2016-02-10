@@ -24,7 +24,8 @@ class CreateBrokeragesTable extends Migration {
             $table->string('brokerage_phone_number', 20);
 			$table->string('brokerage_email', 200)->unique();
             $table->string('brokerage_logo');
-            $table->string('brokerage_password');
+            $table->integer('broker_id')->unsigned();
+			$table->foreign('broker_id')->references('id')->on('brokers');
             $table->timestamps();
 
             // $table->string('slug')->nullable();
