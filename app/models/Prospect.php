@@ -12,6 +12,6 @@ class Prospect extends Eloquent
 
 	public function broker()
 	{
-		return $this->belongsTo('Broker')
+		return $this->belongsTo('Broker');
 	}
 }
