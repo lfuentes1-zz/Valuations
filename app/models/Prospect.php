@@ -9,4 +9,9 @@ class Prospect extends Eloquent
 	{
 		return $this->belongsTo('Agent');
 	}
+
+	public function broker()
+	{
+		return $this->belongsTo('Broker')
+	}
 }
