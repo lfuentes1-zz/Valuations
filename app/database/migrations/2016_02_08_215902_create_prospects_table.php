@@ -18,7 +18,7 @@ class CreateProspectsTable extends Migration {
 	        $table->string('prospect_first_name', 250)->nullable();
 	        $table->string('prospect_last_name', 250)->nullable();
 	        $table->string('prospect_adress', 250);
-	        $table->string('prospect_apt_unit', 10);
+	        $table->string('prospect_apt_unit', 10)->nullable();
 	        $table->string('prospect_city', 150);
             $table->string('prospect_state', 20);
             $table->string('prospect_zip', 10);
@@ -26,6 +26,8 @@ class CreateProspectsTable extends Migration {
 			$table->string('prospect_email', 200)->unique()->nullable();
 			$table->integer('agent_id')->unsigned();
 			$table->foreign('agent_id')->references('id')->on('agents');
+			$table->integer('broker_id')->unsigned();
+			$table->foreign('broker_id')->references('id')->on('brokers');
 			$table->timestamps();
 		});
 	}
