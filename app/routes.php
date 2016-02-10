@@ -11,4 +11,12 @@
 |
 */
 
-Route::get('/', 'ProspectsController@create');
+Route::get('/', 'HomeController@homePage');
+Route::get('/additional_information', 'HomeController@additionalInformation');
+Route::get('/thank_you', 'HomeController@thankYou');
+
+Route::resource('/prospects', 'ProspectsController'); 
+
+
+
+// TODO:  Are the HomeController methods get or post
