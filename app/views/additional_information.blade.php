@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{-- {{ Form::open(array('action' => 'ProspectsController@update', 'method' => 'PUT')) }} --}}
+{{ Form::open(array('action' => 'HomeController@thankYou', 'method' => 'PUT')) }}
 
 <div class="row">
 	<div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-6 col-sm-offset-3 jumbotron">
@@ -26,7 +26,7 @@
 	</div>
 </div>
 
-{{-- {{ Form::close() }} --}}
+{{ Form::close() }}
 
 @stop
 
