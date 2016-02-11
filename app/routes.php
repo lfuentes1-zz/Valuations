@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', 'HomeController@homePage');
-Route::post('/additional_information', 'HomeController@edit');
+Route::get('/', 'HomeController@create');
+Route::post('/', 'HomeController@store');
 
-Route::get('/thank_you', 'HomeController@thankYou');
+Route::get('/additional_information/{id}', 'HomeController@edit');
+// Route::put('/thank_you/{}', 'HomeController@update');
 
 Route::resource('/prospects', 'ProspectsController'); 
 
