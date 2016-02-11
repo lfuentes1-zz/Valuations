@@ -17,7 +17,7 @@ class CreateProspectsTable extends Migration {
 			$table->increments('id');
 	        $table->string('prospect_first_name', 250)->nullable();
 	        $table->string('prospect_last_name', 250)->nullable();
-	        $table->string('prospect_adress', 250);
+	        $table->string('prospect_address', 250);
 	        $table->string('prospect_apt_unit', 10)->nullable();
 	        $table->string('prospect_city', 150);
             $table->string('prospect_state', 20);
