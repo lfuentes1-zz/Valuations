@@ -8,20 +8,6 @@
 		<div class="jumbotron-heading text-center">
 			<h2>Thank You</h2>
 		</div>
-		<div class="jumbotron-subheading text-center">
-			<h3>Get your <span class="jumbotron-special-txt">FREE</span> Home Market Analysis Report</h3>
-		</div>
-		<form class="form-inline">
-			<div class="form-group">
-		    	<label for="prospect-address"></label>
-		    	<input type="text" class="form-control" id="prospect-address" placeholder="Address" autocomplete="on" size="55">
-		  	</div>
-		  	<div class="form-group">
-		    	<label for="prospect-unit-number"></label>
-		    	<input type="text" class="form-control" id="prospect-unit-number" placeholder="Unit #">
-		  	</div>
-		  	<button type="submit" class="btn btn-success">Submit</button>
-		</form>
 	</div>
 </div>
 
