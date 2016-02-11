@@ -3,7 +3,7 @@
 class HomeController extends BaseController {
 
 	// show the form for creating prospect
-	public function homePage()
+	public function create()
 	{
 		return View::make('index');
 	}
@@ -15,7 +15,7 @@ class HomeController extends BaseController {
 		$prospect = new Prospect();
 		$fullAddress = Input::get('prospect-address');
 		$addressPieces = explode(", ", $fullAddress);
-		$prospect->prospect_adress = $addressPieces[0];
+		$prospect->prospect_address = $addressPieces[0];
 		$prospect->prospect_city = $addressPieces[1];
 		$prospect->prospect_state = $addressPieces[2];
 
@@ -27,8 +27,8 @@ class HomeController extends BaseController {
 		$prospect->broker_id = Broker::findOrFail(1)->id;  
 
 		if ($prospect->save())
-		{  //true returns true or false
-			return Redirect::route('additional_information', $prospect->id);
+		{   //true returns true or false
+			return Redirect::action('HomeController@edit', array('prospect' => $prospect->id));
 		}
 		else
 		{
@@ -37,17 +37,21 @@ class HomeController extends BaseController {
 		}
 	}
 
+	// show the form for editing a prospect
 	public function edit($id)
 	{
-		return View::make('additional_information')->with(array('id' => $id, 'address' => $fullAddress));
+		$prospect = Prospect::find($id);
+		// dd($prospect);
+		//put the address together
+		return View::make('additional_information')->with(array('prospect' => $prospect));
 	}
 
-	public function thankYou()
-	{
-		//update the prospect into the database
-		return View::make('thank_you');
-	}
-
+	// public function update(parameter)
+	// {
+	// 	//update the prospect into the database
+	// 	echo ("updating");
+	// 	return View::make('thank_you');
+	// }
 	
 }
 
