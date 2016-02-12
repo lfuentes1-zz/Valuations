@@ -44,3 +44,9 @@
 	{{ Form::close() }}	
 
 @stop
+
+{{--
+
+	TODO:  Notice that if the user types in an address without clicking o submit, the lat and long cannot be figured out.  Does this have anything to do with blur
+
+--}}
