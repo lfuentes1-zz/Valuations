@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('head')
+	@parent
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_ltk7t5oRK_HAoJoo4JQh9R1vz4-1mnU&amp;libraries=places"
 		type="text/javascript"></script>
 	<script src="/js/index.js"></script>
@@ -12,7 +13,11 @@
 
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-6 col-sm-offset-3 jumbotron">
-			<div class="jumbotron-heading text-center">
+				<div class="hidden">
+					{{ Form::label('latitude', 'Lat') }}
+		        	{{ Form::text('latitude', null) }}
+		        </div>
+		        <div class="jumbotron-heading text-center">
 				<h2>What is your San Antonio home worth?</h2>
 			</div>
 			<div class="jumbotron-subheading text-center">
@@ -28,6 +33,10 @@
 			        {{ Form::text('prospect-unit-number', null, ['class' => 'form-control', 'placeholder' => 'Unit Number']) }}
 			  	</div>
 			  	{{ Form::submit('Submit', ['class' => 'btn btn-success']) }}
+			  	<div class="hidden">
+					{{ Form::label('longitude', 'Lng') }}
+		       		{{ Form::text('longitude', null) }}
+		        </div>
 			</form>
 		</div>
 	</div>
@@ -35,5 +44,3 @@
 	{{ Form::close() }}	
 
 @stop
-
-
