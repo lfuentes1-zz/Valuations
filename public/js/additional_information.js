@@ -1,23 +1,24 @@
 (function() {
+	"use strict";
 
 	//*--------uses google maps api to display the map of the property on additional_information.blade.php--------*
-	//used to center the map
-	var latitude = 29.4284595;
-	var longitude = -98.492433;
+	function initialize() {
+		var lat = $('#latitude').val();
+		var lng = $('#longitude').val();
 
-	// Set our map options
-	var mapOptions = {
-		// Set the zoom level
-		zoom: 10,
-
-		// This sets the center of the map
-		center: {
-		    lat:  latitude,
-		    lng: longitude
-		}
-	};
-
+	    var latlng = new google.maps.LatLng(lat, lng);
+	    // Set our map options
+	    var myOptions = {
+	        zoom: 15,
+	        center: latlng,
+	        mapTypeId: google.maps.MapTypeId.ROADMAP	
+	    };
+	    var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+	}
 	// Render the map
-	var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+	google.maps.event.addDomListener(window, "load", initialize);
 
 })();
+
+// TODO:  add the marker on the address
+// TODO:  figure out the zip code to the address
