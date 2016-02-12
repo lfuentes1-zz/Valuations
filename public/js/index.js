@@ -10,7 +10,6 @@
 		geocoder.geocode({ "address": prospectAddress }, function(result, status) {
 			var localLat = result[0].geometry.location.lat();
 			var localLong = result[0].geometry.location.lng();
-			var myLatlng = new google.maps.LatLng(localLat,localLong);
 
 		  	// Check for a successful result of geocoding
 		   	if (status == google.maps.GeocoderStatus.OK) {
@@ -42,3 +41,4 @@
 
 
 })();
+
