@@ -18,6 +18,8 @@ class HomeController extends BaseController {
 		$prospect->prospect_address = $addressPieces[0];
 		$prospect->prospect_city = $addressPieces[1];
 		$prospect->prospect_state = $addressPieces[2];
+		$prospect->prospect_address_lat = Input::get('latitude');
+		$prospect->prospect_address_lng = Input::get('longitude');
 
 		if (Input::has('prospect-unit-number'))
 		{
