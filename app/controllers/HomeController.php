@@ -20,6 +20,7 @@ class HomeController extends BaseController {
 		$prospect->prospect_state = $addressPieces[2];
 		$prospect->prospect_address_lat = Input::get('latitude');
 		$prospect->prospect_address_lng = Input::get('longitude');
+		$prospect->prospect_zip = Input::get('zipcode');
 
 		if (Input::has('prospect-unit-number'))
 		{
@@ -48,12 +49,11 @@ class HomeController extends BaseController {
 		return View::make('additional_information')->with(array('prospect' => $prospect));
 	}
 
-	// public function update(parameter)
-	// {
-	// 	//update the prospect into the database
-	// 	echo ("updating");
-	// 	return View::make('thank_you');
-	// }
+	public function update()
+	{
+		//update the prospect into the database
+		return View::make('thank_you');
+	}
 	
 }
 
