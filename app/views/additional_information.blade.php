@@ -7,6 +7,9 @@
 @stop
 
 @section('content')
+
+	{{ Form::open(array('action' => 'HomeController@update', 'method' => 'PUT', 'id' => 'create-form')) }}	
+
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-6 col-sm-offset-3">
 			<div class="jumbotron">
@@ -15,7 +18,7 @@
 		        	{{ Form::text('latitude', $prospect->prospect_address_lat) }}
 				</div>
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-5">
 						<div class="jumbotron-heading text-center">
 							<h3>{{{"Please complete to receive your FREE Home Market Report"}}}
 							{{ Form::label('latitude', 'Lat') }}
@@ -28,7 +31,7 @@
 								need a form here
 						</div>	
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-7">
 						<div class="img-responsive" id="map-canvas"></div>
 					</div>
 				</div>
@@ -38,11 +41,15 @@
 			    </div>
 			    <div class="hidden">
 					{{ Form::label('prospect-address', 'Address') }}
-		       		{{ Form::text('prospect-address', $prospect->prospect_address . ', ' . $prospect->prospect_city . ', ' . $prospect->prospect_state) }}
+		       		{{ Form::text('prospect-address', $prospect->prospect_address . ', ' . $prospect->prospect_city . ', ' . 
+		       										  $prospect->prospect_state   . ', ' . $prospect->prospect_zip) }}
 			    </div>
 			</div>
 		</div>
 	</div>
+
+	{{ Form::close() }}	
+
 @stop
 
 
