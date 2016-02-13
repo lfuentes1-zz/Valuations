@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 	var markerLabel = '<div>'+		      
 				      '<h5>' + prospectAddress[0] + '</h5>' +
-				      '<h5>' + prospectAddress[1] + ', ' + prospectAddress[2] + '</h5>' +
+				      '<h5>' + prospectAddress[1] + ', ' + prospectAddress[2] + ' ' + prospectAddress[3] + '</h5>' +
 				      '</div>';
 					
     //used for the info window
