@@ -8,13 +8,21 @@
 
 		// Geocode our address
 		geocoder.geocode({ "address": prospectAddress }, function(result, status) {
-			var localLat = result[0].geometry.location.lat();
-			var localLong = result[0].geometry.location.lng();
+			var latitude = result[0].geometry.location.lat();
+			var longitude = result[0].geometry.location.lng();
+										var myLatlng = new google.maps.LatLng(latitude,longitude);
+
 
 		  	// Check for a successful result of geocoding
 		   	if (status == google.maps.GeocoderStatus.OK) {
-			    $("#latitude").val(localLat);
-			    $("#longitude").val(localLong);
+			    $("#latitude").val(latitude);
+			    $("#longitude").val(longitude);
+	            if (result[0]) {
+	                for (j = 0; j < result[0].address_components.length; j++) {
+	                    if (result[0].address_components[j].types[0] == 'postal_code')
+	                    	$("#zipcode").val(result[0].address_components[j].short_name);
+	                }
+	            }
 		    }
 		});
 	};
@@ -35,10 +43,5 @@
 		});
 	}
 	
-	google.maps.event.addDomListener(window, 'load', initialize); //DOM Listener, not Event Listener
-
-
-
-
+	google.maps.event.addDomListener(window, 'load', initialize); //DOM Listener, not Event Listener, same as function ready in jquery
 })();
-
