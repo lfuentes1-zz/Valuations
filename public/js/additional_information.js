@@ -40,6 +40,4 @@ $(document).ready(function() {
 
 });
 
-// TODO:  figure out the zip code to the address
 // TODO:  Google Maps API has street view option
-
