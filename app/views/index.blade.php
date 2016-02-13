@@ -37,6 +37,10 @@
 					{{ Form::label('longitude', 'Lng') }}
 		       		{{ Form::text('longitude', null) }}
 		        </div>
+		        <div class="hidden">
+					{{ Form::label('zipcode', 'Zip') }}
+		       		{{ Form::text('zipcode', null) }}
+		        </div>
 			</form>
 		</div>
 	</div>
