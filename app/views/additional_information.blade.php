@@ -90,6 +90,5 @@
 {{--
 
 TODO:  need to fix the layout of this page
-TODO:  need the two forms
 --}}
 

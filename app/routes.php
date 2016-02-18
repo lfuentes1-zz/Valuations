@@ -11,15 +11,11 @@
 |
 */
 
+//The following routes are used in the HomeController
 Route::get('/', 'HomeController@create');
 Route::post('/', 'HomeController@store');
-
 Route::get('/additional_information/{id}', 'HomeController@edit');
-
 Route::put('/thank_you/{id}', 'HomeController@update');
 
 Route::resource('/prospects', 'ProspectsController'); 
 
-
-
-// TODO:  Are the HomeController methods get or post
