@@ -20,7 +20,7 @@
 				<div class="row">
 					<div class="col-md-5">
 						<div class="jumbotron-heading text-center">
-							<h3>{{{"Please complete to receive your FREE Home Market Report"}}}
+							<h3>{{{"Please complete to receive your FREE Home Market Report"}}}</h3>
 							{{ Form::label('prospect-first-name', ' ') }}
 		        			{{ Form::text('prospect-first-name', null, ['class' => 'form-control', 'placeholder' => 'First Name']) }}
 		        		
@@ -33,7 +33,7 @@
 		        			{{ Form::label('prospect-phone', ' ') }}
 		        			{{ Form::text('prospect-phone', null, ['class' => 'form-control', 'placeholder' => 'Phone Number']) }}
 							
-							<h2>{{{"Property Details"}}}
+							<h2>{{{"Property Details"}}}</h2>
 							<h4>{{{$prospect->prospect_address . ', ' .	$prospect->prospect_city . ', ' . $prospect->prospect_state . ' ' . $prospect->prospect_zip}}}</h4>
 
 							{{ Form::label('prospect-house-beds', ' ') }}
@@ -76,6 +76,7 @@
 		       		{{ Form::text('prospect-address', $prospect->prospect_address . ', ' . $prospect->prospect_city . ', ' . 
 		       										  $prospect->prospect_state   . ', ' . $prospect->prospect_zip) }}
 			    </div>
+			    <h5 class="jumbotron-heading">{{{"You are one click away from getting your report!"}}}</h5>
 	   			{{ Form::submit('Submit', ['class' => 'btn btn-default btn-lg center-block']) }}
 			</div>
 		</div>
@@ -88,7 +89,7 @@
 
 
 {{--
-
 TODO:  need to fix the layout of this page
+TODO:  display the units, if there is one
 --}}
 
