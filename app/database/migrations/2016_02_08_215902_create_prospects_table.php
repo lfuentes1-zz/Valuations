@@ -26,6 +26,9 @@ class CreateProspectsTable extends Migration {
             $table->float('prospect_address_lng', 12, 6);
 	        $table->string('prospect_phone_number', 20)->nullable();
 			$table->string('prospect_email', 200)->unique();
+			$table->integer('prospect_house_bedrooms')->unsigned();
+	        $table->integer('prospect_house_bathrooms')->unsigned();
+			$table->integer('prospect_house_sqft')->unsigned();
 			$table->integer('agent_id')->unsigned();
 			$table->foreign('agent_id')->references('id')->on('agents');
 			$table->integer('broker_id')->unsigned();
