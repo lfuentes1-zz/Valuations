@@ -9,7 +9,7 @@ class AgentTableSeeder extends Seeder
             $agent->agent_last_name       = 'Fuentes';
             $agent->agent_phone_number    = '210.213.9803';
             $agent->agent_email           = 'letty@alamocitydreamhomes.com';
-            // $agent->agent_photo           = '';  //can be null
+            $agent->agent_photo           = '/img/lettyfuentes.jpg'; 
             $agent->agent_password        = $_ENV['AGENT_PASS'];
             // $agent->agent_listing_leads   = ''  //can be null
             // $agent->agent_listing_appointments  = '' //can be null
