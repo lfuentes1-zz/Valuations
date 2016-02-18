@@ -44,18 +44,44 @@ class HomeController extends BaseController {
 	public function edit($id)
 	{
 		$prospect = Prospect::find($id);
-		// dd($prospect);
-		//put the address together
 		return View::make('additional_information')->with(array('prospect' => $prospect));
 	}
 
-	public function update()
+	//update the prospect into the databse
+	public function update($id)
 	{
-		//update the prospect into the database
-		return View::make('thank_you');
+		//should this be find or fail?
+		$prospect = Prospect::find($id);
+		if (Input::has('prospect-first-name'))
+		{
+	    	$prospect->prospect_first_name = Input::get('prospect-first-name');
+		}
+		if (Input::has('prospect-last-name'))
+		{
+	    	$prospect->prospect_last_name = Input::get('prospect-last-name');
+		}
+		if (Input::has('prospect-phone'))
+		{
+	    	$prospect->prospect_phone_number = Input::get('prospect-phone');
+		}
+		$prospect->prospect_email = Input::get('prospect-email');
+		$prospect->prospect_house_bedrooms = Input::get('prospect-house-beds');
+		$prospect->prospect_house_bathrooms = Input::get('prospect-house-baths');
+		$prospect->prospect_house_sqft = Input::get('prospect-house-sqft');
+
+		if ($prospect->save())
+		{ 
+			return View::make('thank_you');
+		}
+		else
+		{
+			Session::flash('errorMessage', 'An error has occurred!');
+			return Redirect::back()->withInput();
+		}
 	}
-	
 }
 
 
 // TODO:  Formula to determine which agent gets the leads or round robin
+//should this be find or fail?
+// $prospect = Prospect::find($id); in method update()
