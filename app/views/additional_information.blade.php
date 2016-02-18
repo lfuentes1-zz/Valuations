@@ -8,7 +8,7 @@
 
 @section('content')
 
-	{{ Form::open(array('action' => 'HomeController@update', 'method' => 'PUT', 'id' => 'create-form')) }}	
+	{{ Form::open(array('action' => array('HomeController@update', $prospect->id), 'method' => 'PUT', 'id' => 'create-form')) }}	
 
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-6 col-sm-offset-3">
@@ -36,8 +36,8 @@
 							<h2>{{{"Property Details"}}}
 							<h4>{{{$prospect->prospect_address . ', ' .	$prospect->prospect_city . ', ' . $prospect->prospect_state . ' ' . $prospect->prospect_zip}}}</h4>
 
-							{{ Form::label('prospect-number-beds', ' ') }}
-					        {{ Form::select('prospect-number-beds', [null=>'Number of Bedrooms'] + array(
+							{{ Form::label('prospect-house-beds', ' ') }}
+					        {{ Form::select('prospect-house-beds', [null=>'Number of Bedrooms'] + array(
 					        	'1' => '1 Bedroom',
 					        	'2' => '2 Bedrooms',
 					        	'3' => '3 Bedrooms',
@@ -46,8 +46,8 @@
 					        	'6' => '6+ Bedrooms'
 					        ), null, array('class' => 'form-control')) }}
 
-							{{ Form::label('prospect-number-baths', ' ') }}
-					        {{ Form::select('prospect-number-baths', [null=>'Number of Baths'] + array(
+							{{ Form::label('prospect-house-baths', ' ') }}
+					        {{ Form::select('prospect-house-baths', [null=>'Number of Baths'] + array(
 					        	'1' => '1 Bathroom',
 					        	'2' => '1.5 Bathrooms',
 					        	'3' => '2 Bathrooms',
@@ -59,8 +59,8 @@
 					        	'9' => '5+ Bathrooms'
 					        ), null, array('class' => 'form-control')) }}
 
-					        {{ Form::label('prospect-square-feet', ' ') }}
-		        			{{ Form::text('prospect-square-feet', null, ['class' => 'form-control', 'placeholder' => 'Square Feet']) }}
+					        {{ Form::label('prospect-house-sqft', ' ') }}
+		        			{{ Form::text('prospect-house-sqft', null, ['class' => 'form-control', 'placeholder' => 'Square Feet']) }}
 						</div>	
 					</div>
 					<div class="col-md-7">
