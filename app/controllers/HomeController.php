@@ -71,12 +71,25 @@ class HomeController extends BaseController {
 
 		if ($prospect->save())
 		{ 
-			return View::make('thank_you');
+			return Redirect::action('HomeController@show', array('prospect' => $prospect->id));
 		}
 		else
 		{
 			Session::flash('errorMessage', 'An error has occurred!');
 			return Redirect::back()->withInput();
+		}
+	}
+
+	//shows one specific record
+	public function show($id)
+	{
+		try {
+			$prospect = Prospect::findOrFail($id);
+			return View::make('thank_you')->with(['prospect'=>$prospect]);
+		} catch (Exception $e)
+		{
+			// Log::error('Failed to find a specific record', array(404, "prospect: " . $prospect));
+			// App::abort(404);  //this goes directly to the missing method in global.php
 		}
 	}
 }
