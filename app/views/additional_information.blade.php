@@ -21,14 +21,46 @@
 					<div class="col-md-5">
 						<div class="jumbotron-heading text-center">
 							<h3>{{{"Please complete to receive your FREE Home Market Report"}}}
-							{{ Form::label('latitude', 'Lat') }}
-		        			{{ Form::text('latitude', $prospect->prospect_address_lat) }}
-		        			{{ Form::label('latitude', 'Lat') }}
-		        			{{ Form::text('latitude', $prospect->prospect_address_lat) }}
-
+							{{ Form::label('prospect-first-name', ' ') }}
+		        			{{ Form::text('prospect-first-name', null, ['class' => 'form-control', 'placeholder' => 'First Name']) }}
+		        		
+		        			{{ Form::label('prospect-last-name', ' ') }}
+		        			{{ Form::text('prospect-last-name', null, ['class' => 'form-control', 'placeholder' => 'Last Name']) }}
+		        		
+		        			{{ Form::label('prospect-email', ' ') }}
+		        			{{ Form::text('prospect-email', null, ['class' => 'form-control', 'placeholder' => 'Email Address']) }}
+		        		
+		        			{{ Form::label('prospect-phone', ' ') }}
+		        			{{ Form::text('prospect-phone', null, ['class' => 'form-control', 'placeholder' => 'Phone Number']) }}
+							
 							<h2>{{{"Property Details"}}}
-							<h4>{{{$prospect->prospect_address}}}</h4>
-								need a form here
+							<h4>{{{$prospect->prospect_address . ', ' .	$prospect->prospect_city . ', ' . $prospect->prospect_state . ' ' . $prospect->prospect_zip}}}</h4>
+
+							{{ Form::label('prospect-number-beds', ' ') }}
+					        {{ Form::select('prospect-number-beds', [null=>'Number of Bedrooms'] + array(
+					        	'1' => '1 Bedroom',
+					        	'2' => '2 Bedrooms',
+					        	'3' => '3 Bedrooms',
+					        	'4' => '4 Bedrooms',
+					        	'5' => '5 Bedrooms',
+					        	'6' => '6+ Bedrooms'
+					        ), null, array('class' => 'form-control')) }}
+
+							{{ Form::label('prospect-number-baths', ' ') }}
+					        {{ Form::select('prospect-number-baths', [null=>'Number of Baths'] + array(
+					        	'1' => '1 Bathroom',
+					        	'2' => '1.5 Bathrooms',
+					        	'3' => '2 Bathrooms',
+					        	'4' => '2.5 Bathrooms',
+					        	'5' => '3 Bathrooms',
+					        	'6' => '3.5 Bathrooms',
+					        	'7' => '4 Bathrooms',
+					        	'8' => '4.5 Bathrooms',
+					        	'9' => '5+ Bathrooms'
+					        ), null, array('class' => 'form-control')) }}
+
+					        {{ Form::label('prospect-square-feet', ' ') }}
+		        			{{ Form::text('prospect-square-feet', null, ['class' => 'form-control', 'placeholder' => 'Square Feet']) }}
 						</div>	
 					</div>
 					<div class="col-md-7">
@@ -44,9 +76,11 @@
 		       		{{ Form::text('prospect-address', $prospect->prospect_address . ', ' . $prospect->prospect_city . ', ' . 
 		       										  $prospect->prospect_state   . ', ' . $prospect->prospect_zip) }}
 			    </div>
+	   			{{ Form::submit('Submit', ['class' => 'btn btn-default btn-lg center-block']) }}
 			</div>
 		</div>
 	</div>
+
 
 	{{ Form::close() }}	
 
@@ -57,7 +91,5 @@
 
 TODO:  need to fix the layout of this page
 TODO:  need the two forms
-
-
 --}}
 
