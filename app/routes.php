@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@create');
 Route::post('/', 'HomeController@store');
 Route::get('/additional_information/{id}', 'HomeController@edit');
 Route::put('/thank_you/{id}', 'HomeController@update');
+Route::get('/thank_you/{id}', 'HomeController@show');
 
 Route::resource('/prospects', 'ProspectsController'); 
 
