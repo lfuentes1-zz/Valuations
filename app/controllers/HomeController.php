@@ -89,7 +89,7 @@ class HomeController extends BaseController {
 			return View::make('thank_you')->with(['prospect'=>$prospect]);
 		} catch (Exception $e)
 		{
-			Log::error('Failed to find a specific record', array(404, "prospect: " . $prospect));
+			Log::error('Failed to find a specific record', array(404, "prospect: " . $prospect->id));
 			App::abort(404);  //this goes directly to the missing method in global.php
 		}
 	}
