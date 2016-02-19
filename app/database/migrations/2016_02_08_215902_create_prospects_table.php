@@ -29,7 +29,7 @@ class CreateProspectsTable extends Migration {
 			$table->integer('prospect_house_bedrooms')->unsigned();
 	        $table->integer('prospect_house_bathrooms')->unsigned();
 			$table->integer('prospect_house_sqft')->unsigned();
-			$table->integer('agent_id')->unsigned();
+			$table->integer('agent_id')->unsigned()->nullable();
 			$table->foreign('agent_id')->references('id')->on('agents');
 			$table->integer('broker_id')->unsigned();
 			$table->foreign('broker_id')->references('id')->on('brokers');
