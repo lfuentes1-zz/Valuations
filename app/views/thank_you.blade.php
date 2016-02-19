@@ -20,6 +20,11 @@
 					<h4>{{{$prospect->agent->agent_phone_number}}}</h4>
 				</div>
 			</div>
+			<div class="row">
+				<a href="{{{$prospect->agent->agent_facebook}}}" target="_blank">
+					<img src="/img/facebook_logo.png" alt="Agent Facebook" width="42" height="42" border="0">
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
