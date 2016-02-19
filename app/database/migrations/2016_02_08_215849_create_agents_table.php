@@ -20,6 +20,10 @@ class CreateAgentsTable extends Migration {
 	        $table->string('agent_phone_number', 20);
 			$table->string('agent_email', 200)->unique();
 	        $table->string('agent_photo')->nullable();
+	        $table->string('agent_facebook')->unique()->nullable();
+	        $table->string('agent_linkedin')->unique()->nullable();
+	        $table->string('agent_twitter')->unique()->nullable();
+	        $table->string('agent_youtube')->unique()->nullable();
 	        $table->string('agent_password');
 	        $table->integer('agent_listing_leads')->nullable();
 	        $table->integer('agent_listing_appointments')->nullable();
