@@ -54,6 +54,11 @@
     height: 400px;
 }  
 
+.agent-image {
+	width: 225px;
+	height: 325px;
+}
+
 /*
 
 TODO: class=footer should be at the bottom of the page - calculated and not with pixels
