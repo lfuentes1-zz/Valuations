@@ -24,6 +24,15 @@
 				<a href="{{{$prospect->agent->agent_facebook}}}" target="_blank">
 					<img src="/img/facebook_logo.png" alt="Agent Facebook" width="42" height="42" border="0">
 				</a>
+				<a href="{{{$prospect->agent->agent_linkedin}}}" target="_blank">
+					<img src="/img/linkedin_logo.png" alt="Agent Linkedin" width="42" height="42" border="0">
+				</a>
+				<a href="{{{$prospect->agent->agent_twitter}}}" target="_blank">
+					<img src="/img/twitter_logo.png" alt="Agent Twitter" width="42" height="42" border="0">
+				</a>
+				<a href="{{{$prospect->agent->agent_youtube}}}" target="_blank">
+					<img src="/img/youtube_logo.png" alt="Agent Youtube" width="42" height="42" border="0">
+				</a>
 			</div>
 		</div>
 	</div>
