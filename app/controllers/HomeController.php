@@ -85,11 +85,12 @@ class HomeController extends BaseController {
 	{
 		try {
 			$prospect = Prospect::findOrFail($id);
+			$prospect->load('agent');
 			return View::make('thank_you')->with(['prospect'=>$prospect]);
 		} catch (Exception $e)
 		{
-			// Log::error('Failed to find a specific record', array(404, "prospect: " . $prospect));
-			// App::abort(404);  //this goes directly to the missing method in global.php
+			Log::error('Failed to find a specific record', array(404, "prospect: " . $prospect));
+			App::abort(404);  //this goes directly to the missing method in global.php
 		}
 	}
 }
