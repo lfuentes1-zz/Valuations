@@ -31,6 +31,7 @@ class CreateAgentsTable extends Migration {
 	        $table->integer('agent_listings_sold')->nullable();
 	        $table->float('agent_lead_to_sold_rate', 6, 2)->nullable();
 	        $table->decimal('agent_dollar_volume', 10, 2)->nullable();
+	        $table->boolean('agent_lead_received');
 	        $table->integer('brokerage_id')->unsigned();
 			$table->foreign('brokerage_id')->references('id')->on('brokerages');
 			$table->integer('broker_id')->unsigned();
