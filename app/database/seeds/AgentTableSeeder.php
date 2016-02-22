@@ -20,7 +20,8 @@ class AgentTableSeeder extends Seeder
             // $agent->agent_listings_taken  = ''  //can be null
             // $agent->agent_listings_sold   = ''  //can be null
             // $agent->agent_lead_to_sold_rate= '';  //can be null
-            $agent->agent_dollar_volume   = ''; //can be null
+            // $agent->agent_dollar_volume   = ''; //can be null
+            $agent->agent_lead_received   = false;
             $agent->brokerage_id          = Brokerage::findorFail(1)->id;           
             $agent->broker_id             = Broker::findorFail(1)->id;           
             $agent->save();
